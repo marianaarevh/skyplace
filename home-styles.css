@@ -1,0 +1,399 @@
+/* Paleta de colores de la marca */
+:root {
+    --color-morado: #73316e;
+    --color-magenta: #c5256e;
+    --color-rosa: #ea504e;
+    --color-naranja-rojo: #e65232;
+    --color-naranja: #f7941d;
+    --color-cyan: #81c4ca;
+    
+    --primary-color: #73316e;
+    --secondary-color: #81c4ca;
+    --accent-color: #f7941d;
+    --text-dark: #333;
+    --text-light: #666;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background: #ffffff;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-dark);
+    background: transparent;
+    min-height: 100vh;
+    position: relative;
+    cursor: crosshair; /* Para el efecto de rastro */
+}
+
+/* ===== EFECTO DE RASTRO DE MASCOTA ===== */
+/* COMENTAR/DESCOMENTAR ESTA SECCIÓN PARA ACTIVAR/DESACTIVAR */
+
+#mascot-trails {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.mascot-trail {
+    position: absolute;
+    font-size: 30px;
+    pointer-events: none;
+    animation: fadeOut 2s ease-out forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.5) rotate(20deg);
+    }
+}
+
+
+/* ===== HEADER PRINCIPAL ===== */
+.main-header {
+    padding: 3rem 0 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    min-height: 30vh;
+}
+
+.logo-box-home img {
+    height: 170px;
+    width: auto;
+}
+
+.logo-principal {
+    margin-bottom: 1.5rem;
+}
+
+.titulo-principal {
+    font-size: 3.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--color-morado), var(--color-magenta), var(--color-rosa));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+}
+
+.subtitulo-principal {
+    font-size: 1.3rem;
+    color: var(--text-light);
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+/* ===== GRID DE SUCURSALES ===== */
+.sucursales-container {
+    padding: 2rem 0 3rem;
+    position: relative;
+    z-index: 10;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.sucursal-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 5;
+
+}
+
+.sucursal-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Círculo de la sucursal */
+.sucursal-circle {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    border: 5px solid transparent;
+    background-image: linear-gradient(white, white), 
+                      linear-gradient(135deg, var(--color-morado), var(--color-magenta), var(--color-naranja));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 15px 50px rgba(115, 49, 110, 0.25);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.sucursal-card:hover .sucursal-circle {
+    box-shadow: 0 20px 70px rgba(197, 37, 110, 0.4);
+    background-image: linear-gradient(white, white), 
+                      linear-gradient(135deg, var(--color-magenta), var(--color-rosa), var(--color-naranja));
+}
+
+.sucursal-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.sucursal-card:hover .sucursal-image {
+    transform: scale(1.1);
+}
+
+/* ===== MASCOTA QUE SE ASOMA ===== */
+.mascota-peek {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: visible;
+    z-index: 10;
+}
+
+.mascota-emoji {
+    height: 50%;
+    width: auto;
+    position: absolute;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.4));
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.mascota-emoji img {
+    height: 90%;
+    }
+
+/* Posiciones iniciales - fuera del círculo en diferentes direcciones */
+.sucursal-card:nth-child(1) .mascota-emoji {
+    bottom: -60px;
+    left: 50%;
+    transform: translate(-50%, 100%) scale(0.8);
+    opacity: 0;
+}
+
+.sucursal-card:nth-child(2) .mascota-emoji {
+    left: -60px;
+    top: 50%;
+    transform: translate(-100%, -50%) scale(0.8);
+    opacity: 0;
+}
+
+.sucursal-card:nth-child(3) .mascota-emoji {
+    top: -60px;
+    left: 50%;
+    transform: translate(-50%, -100%) scale(0.8);
+    opacity: 0;
+}
+
+.sucursal-card:nth-child(4) .mascota-emoji {
+    right: -60px;
+    top: 50%;
+    transform: translate(100%, -50%) scale(0.8);
+    opacity: 0;
+}
+
+/* Posiciones al hacer hover - se asoman desde atrás */
+.sucursal-card:nth-child(1):hover .mascota-emoji {
+    bottom: -40px;
+    left: 50%;
+    transform: translate(-50%, 0) scale(1);
+    opacity: 1;
+}
+
+.sucursal-card:nth-child(2):hover .mascota-emoji {
+    left: -40px;
+    top: 50%;
+    transform: translate(0, -50%) scale(1);
+    opacity: 1;
+}
+
+.sucursal-card:nth-child(3):hover .mascota-emoji {
+    top: -40px;
+    left: 50%;
+    transform: translate(-50%, 0) scale(1);
+    opacity: 1;
+}
+
+.sucursal-card:nth-child(4):hover .mascota-emoji {
+    right: -40px;
+    top: 50%;
+    transform: translate(0, -50%) scale(1);
+    opacity: 1;
+}
+
+/* Nombre de la sucursal */
+.sucursal-nombre {
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--color-morado), var(--color-magenta));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-top: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.sucursal-card:hover .sucursal-nombre {
+    background: linear-gradient(135deg, var(--color-magenta), var(--color-rosa), var(--color-naranja));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transform: scale(1.05);
+}
+
+/* ===== FOOTER SIMPLE ===== */
+.footer-simple {
+    padding: 1rem 0;
+    background: rgba(255, 255, 255, 0.9);
+    border-top: 3px solid transparent;
+    border-image: linear-gradient(90deg, var(--color-morado), var(--color-magenta), var(--color-rosa), var(--color-naranja), var(--color-cyan)) 1;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.footer-simple p {
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+.social-links-simple {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.social-links-simple a {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, var(--color-morado), var(--color-magenta));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-links-simple a:hover {
+    transform: translateY(-5px) scale(1.1);
+    background: linear-gradient(135deg, var(--color-rosa), var(--color-naranja));
+    box-shadow: 0 5px 20px rgba(197, 37, 110, 0.5);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:1280px) {
+    .sucursal-circle {
+        width: 220px;
+        height: 220px;
+    }
+}
+@media (max-width: 991px) {
+    .sucursal-circle {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .mascota-emoji {
+        font-size: 90px;
+    }
+
+    .logo-box-home img {
+        height: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .titulo-principal {
+        font-size: 2.5rem;
+    }
+    
+    .subtitulo-principal {
+        font-size: 1.2rem;
+    }
+    
+    .logo-text-home {
+        font-size: 2rem;
+    }
+    
+    .sucursales-container {
+        min-height: auto;
+        padding: 1rem 0 2rem;
+    }
+    
+    .sucursal-circle {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .mascota-emoji {
+        font-size: 80px;
+    }
+    
+    .sucursal-nombre {
+        font-size: 1.4rem;
+    }
+
+     .logo-box-home img {
+        height: 100px;
+    }
+    
+    /* Ajustar posiciones de mascota en móvil */
+    .sucursal-card:nth-child(n) .mascota-emoji {
+        bottom: -30px;
+        left: 50%;
+        top: auto;
+        right: auto;
+        transform: translate(-50%, 100%) scale(0.8);
+    }
+    
+    .sucursal-card:nth-child(n):hover .mascota-emoji {
+        bottom: -20px;
+        transform: translate(-50%, 0) scale(1);
+    }
+}
+
+@media (max-width: 576px) {
+    .sucursal-circle {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .mascota-emoji {
+        font-size: 70px;
+    }
+    
+    .sucursal-nombre {
+        font-size: 1.2rem;
+    }
+}
