@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky Place - Solidaridad</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Barra de Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container-fluid px-4">
+            <!-- Logo y Sucursal -->
+            <div class="navbar-brand-container">
+                <a class="navbar-brand" href="#">
+                    <div class="logo-box">
+                        <img src="img/logo.png" alt="">
+                    </div>
+                </a>
+               <!-- <small class="sucursal-text d-block">Sucursal Solidaridad</small> -->
+            </div>
+
+            <!-- Toggle para móvil -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú de navegación -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#precios">Precios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#atracciones">Atracciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicios">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#footer">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner Carrusel -->
+    <section id="inicio" class="hero-section">
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <!-- Indicadores -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            </div>
+
+            <!-- Slides -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="carousel-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                         <img 
+                            src="img/atracciones/beam.jpg"
+                            class="carousel-img"
+                            alt="Promociones de la semana"
+                        >
+                        <div class="carousel-caption-custom">
+                            <h1 class="display-4 fw-bold">Promociones de la semana</h1>
+                            <p class="lead">Primera imagen del carrusel</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <div class="carousel-caption-custom">
+                            <h1 class="display-4 fw-bold"></h1>
+                            <p class="lead">Segunda imagen del carrusel</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <div class="carousel-caption-custom">
+                            <h1 class="display-4 fw-bold"></h1>
+                            <p class="lead">Tercera imagen del carrusel</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controles -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Sección de Precios e Información -->
+    <section id="precios" class="precios-section py-5">
+        <div class="container-fluid px-4">
+            <div class="row g-4">
+                <!-- Columna de Precios (60%) -->
+                <div class="col-lg-7">
+                    <div class="precios-container">
+                        <div class="section-title-card mb-4">
+                            <h2 class="section-title">Pulseras de acceso</h2>
+                        </div>
+                        
+                        <div class="row g-3">
+                            <!-- Precio 1 -->
+                            <div class="col-12">
+                                <div class="precio-card precio-card-horizontal">
+                                    <div class="precio-icon">
+                                        <i class="bi bi-clock"></i>
+                                    </div>
+                                    <div class="precio-content">
+                                        <h3 class="precio-titulo">30 minutos</h3>
+                                        <p class="precio-descripcion">Un shot rápido de diversión. 30 minutos para saltar libremente en todas las áreas del parque</p>
+                                    </div>
+                                    <div class="precio-monto">$99</div>
+                                </div>
+                            </div>
+
+                            <!-- Precio 2 -->
+                            <div class="col-12">
+                                <div class="precio-card precio-card-horizontal">
+                                    <div class="precio-icon">
+                                        <i class="bi bi-clock-history"></i>
+                                    </div>
+                                    <div class="precio-content">
+                                        <h3 class="precio-titulo">60 minutos</h3>
+                                        <p class="precio-descripcion">El tiempo perfecto para agarrar ritmo. 60 minutos de acceso completo a todas las áreas del parque</p>
+                                    </div>
+                                    <div class="precio-monto">$179</div>
+                                </div>
+                            </div>
+
+                            <!-- Precio 3 -->
+                            <div class="col-12">
+                                <div class="precio-card precio-card-horizontal">
+                                    <div class="precio-icon">
+                                        <i class="bi bi-infinity"></i>
+                                    </div>
+                                    <div class="precio-content">
+                                        <h3 class="precio-titulo">90 minutos</h3>
+                                        <p class="precio-descripcion">Ya entrados en calor. 90 minutos para disfrutar sin parar de todas las áreas del parque</p>
+                                    </div>
+                                    <div class="precio-monto">$199</div>
+                                </div>
+                            </div>
+
+                            <!-- Precio 4 -->
+                            <div class="col-12">
+                                <div class="precio-card precio-card-horizontal precio-card-destacado">
+                                    <div class="precio-badge">Popular</div>
+                                    <div class="precio-icon">
+                                        <i class="bi bi-people-fill"></i>
+                                    </div>
+                                    <div class="precio-content">
+                                        <h3 class="precio-titulo">120 minutos</h3>
+                                        <p class="precio-descripcion">Para los que no se cansan. 120 minutos de acceso completo a todas las áreas del parque</p>
+                                    </div>
+                                    <div class="precio-monto">$219</div>
+                                </div>
+                            </div>
+
+                            <!-- Precio 5 -->
+                            <div class="col-12">
+                                <div class="precio-card precio-card-horizontal">
+                                    <div class="precio-icon">
+                                        <i class="bi bi-infinity"></i>
+                                    </div>
+                                    <div class="precio-content">
+                                        <h3 class="precio-titulo">Daypass</h3>
+                                        <p class="precio-descripcion">Ven sin prisas. Acceso ilimitado durante todo el día a todas las áreas del parque</p>
+                                    </div>
+                                    <div class="precio-monto">$269</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna de Información (40%) -->
+                <div class="col-lg-5">
+                    <div class="info-card">
+                        <!-- Horarios de Atención -->
+                        <div class="info-section mb-4">
+                            <h3 class="info-title">
+                                <i class="bi bi-clock-fill me-2"></i>
+                                Horarios de Atención
+                            </h3>
+                            <div class="horario-item">
+                                <span class="dia">Lunes a Jueves:</span>
+                                <span class="hora">1:00 PM - 9:00 PM</span>
+                            </div>
+                            <div class="horario-item">
+                                <span class="dia">Viernes:</span>
+                                <span class="hora">1:00 PM - 11:00 PM</span>
+                            </div>
+                            <div class="horario-item">
+                                <span class="dia">Sábados:</span>
+                                <span class="hora">10:00 AM - 11:00 PM</span>
+                            </div>
+                            <div class="horario-item">
+                                <span class="dia">Domingos:</span>
+                                <span class="hora">10:00 AM - 9:00 PM</span>
+                            </div>
+                        </div>
+
+                        <!-- Ubicación -->
+                        <div class="info-section">
+                            <h3 class="info-title">
+                                <i class="bi bi-geo-alt-fill me-2"></i>
+                                Ubicación
+                            </h3>
+                            <p class="direccion mb-3">
+                                <strong>Sucursal Solidaridad</strong><br>
+                                Blvd. Solidaridad 121, Raquet Club, Hermosillo, Sonora
+                            </p>
+                            <!-- Mapa incrustado -->
+                            <div class="mapa-container">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d55784.75570965061!2d-110.9905721!3d29.0895215!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ce840f11ad9bdd%3A0x75a6cf9a41b832ec!2sSky%20Place%2C%20Trampoline%20Park!5e0!3m2!1ses-419!2smx!4v1770238979304!5m2!1ses-419!2smx"
+                                    width="100%" 
+                                    height="300" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    class="mapa-iframe">
+                                </iframe>
+                            </div>
+                            <!-- Botón para abrir en Google Maps -->
+                            <a href="https://maps.app.goo.gl/ePbd9CPEEHtdeXMd9" 
+                               target="_blank" 
+                               class="btn-mapa mt-3">
+                                <i class="bi bi-map me-2"></i>
+                                Abrir en Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Atracciones -->
+    <section id="atracciones" class="atracciones-section py-5">
+        <div class="container-fluid px-4">
+            <div class="row align-items-center g-0">
+                <!-- Título y descripción (20%) -->
+                <div class="col-lg-2">
+                    <div class="titulo-vertical">
+                        <h2 class="titulo-atracciones">Nuestras Atracciones</h2>
+                        <p class="descripcion-atracciones">
+                            Descubre todas las increíbles áreas de diversión que tenemos para ti en nuestro parque de trampolines.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Carrusel de imágenes (80%) -->
+                <div class="col-lg-10">
+                    <div id="atraccionesCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <!-- Indicadores -->
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#atraccionesCarousel" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#atraccionesCarousel" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#atraccionesCarousel" data-bs-slide-to="2"></button>
+                            <button type="button" data-bs-target="#atraccionesCarousel" data-bs-slide-to="3"></button>
+                        </div>
+
+                        <!-- Slides -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="atraccion-slide">
+                                    <img src="img/atracciones/salto.jpg" 
+                                         class="d-block w-100" 
+                                         alt="Trampolines Libres">
+                                    <div class="atraccion-caption">
+                                        <h3>Trampolines Libres</h3>
+                                        <p>Salta, brinca y diviértete en nuestra amplia zona de trampolines interconectados. Perfecta para todas las edades.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="atraccion-slide">
+                                    <img src="img/atracciones/dodge.jpg" 
+                                         class="d-block w-100" 
+                                         alt="Dodgeball">
+                                    <div class="atraccion-caption">
+                                        <h3>Zona de Dodgeball</h3>
+                                        <p>Reta a tus amigos en emocionantes partidos de dodgeball sobre trampolines. ¡La diversión está garantizada!</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="atraccion-slide">
+                                    <img src="img/atracciones/beam.jpg" 
+                                         class="d-block w-100" 
+                                         alt="Piscina de Espuma">
+                                    <div class="atraccion-caption">
+                                        <h3>Piscina de Espuma</h3>
+                                        <p>Lánzate desde nuestros trampolines a una suave piscina llena de cubos de espuma. ¡Una experiencia única!</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="atraccion-slide">
+                                    <img src="img/atracciones/Jumpsquare-Indoor-Trampoline-Parks-Lelystad-Dodgeball.jpg" 
+                                         class="d-block w-100" 
+                                         alt="Basketball">
+                                    <div class="atraccion-caption">
+                                        <h3>Área de Basketball</h3>
+                                        <p>Demuestra tus habilidades haciendo slam dunks espectaculares desde nuestros trampolines especiales.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Controles -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#atraccionesCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#atraccionesCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                            <span class="visually-hidden">Siguiente</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Servicios (Tarjetas) -->
+    <section id="servicios" class="servicios-section py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Nuestros Servicios Especiales</h2>
+            
+            <div class="row g-4">
+                <!-- Tarjeta 1: Paquetes de Cumpleaños -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="servicio-card">
+                        <div class="servicio-icon">
+                            <i class="bi bi-balloon-heart-fill"></i>
+                        </div>
+                        <h3 class="servicio-titulo">Paquetes de Cumpleaños</h3>
+                        <p class="servicio-descripcion">
+                            Celebra el cumpleaños más memorable con nuestros paquetes especiales. Incluyen área privada, decoración, pastel y diversión ilimitada para todos los invitados.
+                        </p>
+                        <ul class="servicio-lista">
+                            <li><i class="bi bi-check-circle-fill"></i> Área privada exclusiva</li>
+                            <li><i class="bi bi-check-circle-fill"></i> 2 horas de diversión</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Decoración incluida</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Animador profesional</li>
+                        </ul>
+                        <button class="btn-servicio" data-servicio="cumpleanos">
+                            <i class="bi bi-info-circle me-2"></i>
+                            Más Información
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2: Programas Empresariales -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="servicio-card">
+                        <div class="servicio-icon">
+                            <i class="bi bi-building"></i>
+                        </div>
+                        <h3 class="servicio-titulo">Programas Empresariales</h3>
+                        <p class="servicio-descripcion">
+                            Fortalece el trabajo en equipo con actividades dinámicas. Ideal para team building, eventos corporativos y celebraciones de empresa.
+                        </p>
+                        <ul class="servicio-lista">
+                            <li><i class="bi bi-check-circle-fill"></i> Actividades grupales</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Horarios flexibles</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Área de catering</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Paquetes personalizados</li>
+                        </ul>
+                        <button class="btn-servicio" data-servicio="empresarial">
+                            <i class="bi bi-info-circle me-2"></i>
+                            Más Información
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3: Programas Escolares -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="servicio-card">
+                        <div class="servicio-icon">
+                            <i class="bi bi-backpack-fill"></i>
+                        </div>
+                        <h3 class="servicio-titulo">Programas Escolares</h3>
+                        <p class="servicio-descripcion">
+                            Excursiones educativas y recreativas para grupos escolares. Fomentamos el deporte, la actividad física y el compañerismo en un ambiente seguro.
+                        </p>
+                        <ul class="servicio-lista">
+                            <li><i class="bi bi-check-circle-fill"></i> Supervisión profesional</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Tarifas especiales</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Seguridad garantizada</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Transporte opcional</li>
+                        </ul>
+                        <button class="btn-servicio" data-servicio="escolar">
+                            <i class="bi bi-info-circle me-2"></i>
+                            Más Información
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Opiniones de Clientes -->
+    <section id="opiniones" class="opiniones-section py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Lo Que Dicen Nuestros Clientes</h2>
+            
+            <div class="row g-4">
+                <!-- Opinión 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="opinion-card">
+                        <div class="rating mb-3">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="opinion-texto">
+                            "Una experiencia increíble para cumpleaños: mucha diversión y personal muy atento."
+                        </p>
+                        <div class="cliente-info">
+                            <div class="cliente-avatar">
+                                <img src="img/clientes/icons8-team-FcLyt7lW5wg-unsplash.jpg" alt="María Contreras">
+                            </div>
+                            <div class="cliente-datos">
+                                <h5 class="cliente-nombre">María Contreras</h5>
+                                <p class="cliente-fecha">Hace 2 semanas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Opinión 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="opinion-card">
+                        <div class="rating mb-3">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="opinion-texto">
+                            "Gran opción para team building, instalaciones impecables y actividades ideales para equipos."
+                        </p>
+                        <div class="cliente-info">
+                            <div class="cliente-avatar">
+                                <img src="img/clientes/jurica-koletic-7YVZYZeITc8-unsplash.jpg" alt="Jorge Ramírez">
+                            </div>
+                            <div class="cliente-datos">
+                                <h5 class="cliente-nombre">Jorge Ramírez</h5>
+                                <p class="cliente-fecha">Hace 1 mes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Opinión 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="opinion-card">
+                        <div class="rating mb-3">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="opinion-texto">
+                            "Un lugar seguro, limpio y accesible donde los niños se divierten sin parar."
+                        </p>
+                        <div class="cliente-info">
+                            <div class="cliente-avatar">
+                                <img src="img/clientes/jake-nackos-IF9TK5Uy-KI-unsplash.jpg" alt="Ana López">
+                            </div>
+                            <div class="cliente-datos">
+                                <h5 class="cliente-nombre">Ana López</h5>
+                                <p class="cliente-fecha">Hace 3 semanas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Preguntas Frecuentes -->
+    <section id="faq" class="faq-section py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Preguntas Frecuentes</h2>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        
+                        <!-- Pregunta 1 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                                    <i class="bi bi-question-circle-fill me-3"></i>
+                                    ¿Cuál es la edad mínima para ingresar?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Aceptamos personas de todas las edades. Los niños menores de 5 años deben estar acompañados por un adulto en todo momento dentro del área de trampolines. Tenemos áreas especiales adaptadas para diferentes grupos de edad.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 2 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                                    <i class="bi bi-question-circle-fill me-3"></i>
+                                    ¿Necesito reservar con anticipación?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    No es obligatorio reservar para entradas individuales, pero sí es altamente recomendable, especialmente los fines de semana y días festivos. Para eventos especiales como cumpleaños, eventos empresariales o escolares, la reservación es obligatoria con al menos 48 horas de anticipación.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 3 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                                    <i class="bi bi-question-circle-fill me-3"></i>
+                                    ¿Qué debo traer o usar?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Es obligatorio el uso de calcetines antiderrapantes especiales que vendemos en la recepción. Recomendamos ropa cómoda deportiva. No se permite el uso de zapatos dentro del área de trampolines, ni objetos punzocortantes, joyas o accesorios que puedan causar lesiones.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 4 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                                    <i class="bi bi-question-circle-fill me-3"></i>
+                                    ¿Tienen área de alimentos y bebidas?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Sí, contamos con una cafetería donde ofrecemos snacks, bebidas, pizzas y alimentos ligeros. Para los paquetes de cumpleaños, incluimos servicio de alimentos. No está permitido ingresar alimentos o bebidas del exterior, excepto en casos especiales de alergias alimentarias (previa notificación).
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 5 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+                                    <i class="bi bi-question-circle-fill me-3"></i>
+                                    ¿Qué medidas de seguridad tienen?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    La seguridad es nuestra prioridad. Contamos con personal capacitado supervisando constantemente, protecciones acolchadas en todas las áreas, sistema de vigilancia por cámaras, botiquín de primeros auxilios y protocolo de emergencias. Antes de ingresar, todos los visitantes deben ver un video de seguridad y firmar una carta responsiva.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 6 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6">
+                                    <i class="bi bi-question-circle-fill me-3"></i>
+                                    ¿Ofrecen descuentos o promociones?
+                                </button>
+                            </h2>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Sí, ofrecemos descuentos para grupos, promociones especiales en días entre semana, membresías mensuales y paquetes familiares. También tenemos tarifas especiales para escuelas y empresas. Te recomendamos seguirnos en redes sociales para estar al tanto de nuestras promociones y ofertas especiales.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <div class="footer-content">
+            <div class="container">
+                <div class="row g-4">
+                    <!-- Columna 1: Logo y Descripción -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-section">
+                            <div class="footer-logo">
+                                <div class="logo-box">
+                                    <img src="img/logo.png" alt="">
+                                </div>
+                                <small class="sucursal-text-footer">Sucursal Solidaridad</small>
+                            </div>
+                            <p class="footer-descripcion">
+                                El parque de trampolines más divertido y seguro de Hermosillo. Ven y disfruta de momentos inolvidables con tu familia y amigos.
+                            </p>
+                            <!-- Redes Sociales -->
+                            <div class="social-links">
+                                <a href="#" class="social-icon" aria-label="Facebook">
+                                    <i class="bi bi-facebook"></i>
+                                </a>
+                                <a href="#" class="social-icon" aria-label="Instagram">
+                                    <i class="bi bi-instagram"></i>
+                                </a>
+                                <a href="#" class="social-icon" aria-label="TikTok">
+                                    <i class="bi bi-tiktok"></i>
+                                </a>
+                                <a href="#" class="social-icon" aria-label="WhatsApp">
+                                    <i class="bi bi-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Columna 2: Enlaces Rápidos -->
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-section">
+                            <h4 class="footer-titulo">Enlaces Rápidos</h4>
+                            <ul class="footer-links">
+                                <li><a href="#inicio">Inicio</a></li>
+                                <li><a href="#precios">Precios</a></li>
+                                <li><a href="#atracciones">Atracciones</a></li>
+                                <li><a href="#servicios">Servicios</a></li>
+                                <li><a href="#faq">Preguntas</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Columna 3: Servicios -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-section">
+                            <h4 class="footer-titulo">Nuestros Servicios</h4>
+                            <ul class="footer-links">
+                                <li><a href="#precios">Pulseras de Acceso</a></li>
+                                <li><a href="#servicios">Cumpleaños</a></li>
+                                <li><a href="#servicios">Eventos Empresariales</a></li>
+                                <li><a href="#servicios">Programas Escolares</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Columna 4: Contacto -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-section">
+                            <h4 class="footer-titulo">Contacto</h4>
+                            <ul class="footer-contacto">
+                                <li>
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                    <span>Blvd. Solidaridad 121<br>Raquet Club, Hermosillo</span>
+                                </li>
+                                <li>
+                                    <i class="bi bi-telephone-fill"></i>
+                                    <span>662 216 5252</span>
+                                </li>
+                                <li>
+                                    <i class="bi bi-envelope-fill"></i>
+                                    <span>info@skyplace.com</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="mb-0">© 2026 Sky Place. Todos los derechos reservados.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <ul class="footer-bottom-links">
+                            <li><a href="#">Política de Privacidad</a></li>
+                            <li><a href="#">Términos y Condiciones</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botón de volver arriba -->
+        <button id="backToTop" class="back-to-top" aria-label="Volver arriba">
+            <i class="bi bi-arrow-up"></i>
+        </button>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
