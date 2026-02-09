@@ -111,49 +111,34 @@ document.addEventListener('DOMContentLoaded', function() {
     const botonesServicio = document.querySelectorAll('.btn-servicio');
     
     botonesServicio.forEach(boton => {
-        boton.addEventListener('click', function() {
+        boton.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevenir cualquier acción por defecto
+            
             const servicio = this.getAttribute('data-servicio');
             
-            // Aquí puedes cambiar la funcionalidad según necesites:
-            // Opción 1: Mostrar modal con más información
-            // Opción 2: Redirigir a otra página
-            // Opción 3: Abrir formulario de contacto
-            
-            // Por ahora, mostramos un mensaje de ejemplo
-            alert(`Más información sobre: ${servicio}\n\nAquí puedes implementar:\n- Un modal con detalles\n- Redirección a página específica\n- Formulario de contacto\n- Enlaces a WhatsApp`);
-            
-            // Ejemplo para WhatsApp:
-            // window.open(`https://wa.me/521234567890?text=Hola, necesito información sobre ${servicio}`, '_blank');
+            // Abrir el modal correspondiente
+            if (servicio === 'cumpleanos') {
+                const modal = new bootstrap.Modal(document.getElementById('modalCumpleanos'));
+                modal.show();
+            } else if (servicio === 'empresarial') {
+                const modal = new bootstrap.Modal(document.getElementById('modalEmpresas'));
+                modal.show();
+            } else if (servicio === 'escolar') {
+                const modal = new bootstrap.Modal(document.getElementById('modalEscuelas'));
+                modal.show();
+            }
         });
     });
 });
 
-// Función auxiliar para abrir modal de información (ejemplo)
-function mostrarInfoServicio(servicio) {
-    const infoServicios = {
-        cumpleanos: {
-            titulo: 'Paquetes de Cumpleaños',
-            descripcion: 'Información detallada sobre nuestros paquetes de cumpleaños...',
-            telefono: '662-123-4567',
-            email: 'cumpleanos@tuparque.com'
-        },
-        empresarial: {
-            titulo: 'Programas Empresariales',
-            descripcion: 'Información detallada sobre nuestros programas empresariales...',
-            telefono: '662-123-4567',
-            email: 'empresas@tuparque.com'
-        },
-        escolar: {
-            titulo: 'Programas Escolares',
-            descripcion: 'Información detallada sobre nuestros programas escolares...',
-            telefono: '662-123-4567',
-            email: 'escuelas@tuparque.com'
+    modal.addEventListener('shown.bs.modal', function () {
+        // Reiniciar el carrusel cuando se abre el modal
+        const carousel = this.querySelector('.carousel');
+        if (carousel) {
+            const bsCarousel = bootstrap.Carousel.getInstance(carousel) || new bootstrap.Carousel(carousel);
+            bsCarousel.to(0); // Volver a la primera imagen
         }
-    };
-    
-    const info = infoServicios[servicio];
-    console.log(info); // Aquí puedes usar esta info para mostrar un modal o lo que necesites
-}
+    });
 
 // ===== FUNCIONALIDAD DEL BOTÓN VOLVER ARRIBA =====
 document.addEventListener('DOMContentLoaded', function() {
