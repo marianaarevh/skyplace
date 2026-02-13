@@ -1,3 +1,124 @@
+ document.addEventListener("DOMContentLoaded", function () {
+
+  const params = new URLSearchParams(window.location.search);
+  const sucursalId = parseInt(params.get("id"));
+
+  Promise.all([
+    fetch("https://skyplaceadmin.com/api/sucursales"),
+    fetch(`https://skyplaceadmin.com/api/accesos/${sucursalId}`),
+    fetch(`https://skyplaceadmin.com/api/promociones/${sucursalId}`),
+    fetch(`https://skyplaceadmin.com/api/paquetes/${sucursalId}`)
+  ])
+  .then(responses => {
+
+    // Error
+    responses.forEach(response => {
+      if (!response.ok) {
+        throw new Error("Error en una de las APIs");
+      }
+    });
+
+    // Convertir a JSON
+    return Promise.all(responses.map(res => res.json()));
+
+  })
+  .then(([sucursalesData, preciosData, promocionesData]) => {
+
+    //Sucursal
+    const sucursal = sucursalesData.active.find(
+      s => s.id === sucursalId
+    );
+
+    if (!sucursal) {
+      throw new Error("Sucursal no encontrada");
+    }
+
+    mostrarSucursal(sucursal);
+    mostrarAccesos(preciosData);
+    mostrarPromociones(promocionesData);
+    console.log("Accesos recibidos:", preciosData);
+
+  })
+  .catch(error => {
+    console.error("Error general:", error);
+    mostrarMensajeError();
+  });
+
+
+
+
+    function mostrarSucursal(data) {
+        document.getElementById("nombreSucursal").textContent = data.name;
+        document.getElementById("direccionSucursal").textContent = data.address;
+    }
+
+    function mostrarAccesos(accesos) {
+        const contenedor = document.getElementById("listaAccesos");
+        contenedor.innerHTML="";
+        accesos.forEach(acceso => {
+
+        const col = document.createElement("div");
+        col.classList.add("col-12");
+
+        col.innerHTML = `
+        <div class="precio-card precio-card-horizontal">
+            <div class="precio-icon">
+                <i class="bi bi-clock"></i>
+            </div>
+            <div class="precio-content">
+                <h3 class="precio-titulo">${acceso.nombre}</h3>
+                <p class="precio-descripcion">
+                    ${descripcionAcceso(acceso.minutes)}
+                </p>
+            </div>
+            <div class="precio-monto">$${acceso.price}</div>
+        </div>
+        `;
+        contenedor.appendChild(col);
+
+    });
+    }
+
+    function descripcionAcceso(minutos) {
+
+        if (minutos === 840) {
+            return "Disfruta todo el día sin límite de tiempo en todas las áreas del parque.";
+        }
+
+        return `${minutos} minutos de diversión continua en todas las áreas del parque.`;
+    }
+   
+    function mostrarPromociones(promociones) {
+        const contenedor = document.getElementById("carousel-inner");
+        const contenedorIndicadores = document.getElementById("carousel-indicators");
+        contenedor.innerHTML = "";
+
+        promociones.forEach((promocion, index) => {
+
+            //indicadores
+            contenedorIndicadores.innerHTML += `
+            <button type="button"
+                    data-bs-target="#heroCarousel"
+                    data-bs-slide-to="${index}"
+                    class="${index === 0 ? 'active' : ''}"
+                    ${index === 0 ? 'aria-current="true"' : ''}>
+            </button>
+            `;
+
+            //imagenes
+            contenedor.innerHTML += `
+            <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                <div class="carousel-image">
+                    <img src="${promocion.image}" class="carousel-img" alt="${promocion.nombre}">
+            
+                </div>
+            </div>
+            `;
+        });
+        }
+});
+
+
 // Configuración del carrusel
 document.addEventListener('DOMContentLoaded', function() {
     // Inicializar el carrusel con opciones personalizadas

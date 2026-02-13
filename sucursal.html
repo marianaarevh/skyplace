@@ -55,44 +55,13 @@
     <section id="inicio" class="hero-section">
         <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <!-- Indicadores -->
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            <div id="carousel-indicators" class="carousel-indicators">
+                <!-- Indicadores dinamicos -->
             </div>
 
             <!-- Slides -->
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="carousel-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                         <img 
-                            src="img/promo/gem.png"
-                            class="carousel-img"
-                            alt="Promociones de la semana"
-                        >
-                         <!-- 
-                        <div class="carousel-caption-custom">
-                            <h1 class="display-4 fw-bold">Promociones de la semana</h1>
-                            <p class="lead">Primera imagen del carrusel</p>
-                        </div>-->
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="carousel-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                        <div class="carousel-caption-custom">
-                            <h1 class="display-4 fw-bold"></h1>
-                            <p class="lead">Segunda imagen del carrusel</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="carousel-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                        <div class="carousel-caption-custom">
-                            <h1 class="display-4 fw-bold"></h1>
-                            <p class="lead">Tercera imagen del carrusel</p>
-                        </div>
-                    </div>
-                </div>
+            <div id="carousel-inner" class="carousel-inner">
+                <!-- Promociones por API -->
             </div>
 
             <!-- Controles -->
@@ -102,7 +71,7 @@
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
                 <span class="carousel-control-next-icon"></span>
-                <span class="visually-hidden">Siguiente</span>
+                <span class="visually-hidden">Siguiencomte</span>
             </button>
         </div>
     </section>
@@ -118,77 +87,8 @@
                             <h2 class="section-title">Pulseras de acceso</h2>
                         </div>
                         
-                        <div class="row g-3">
-                            <!-- Precio 1 -->
-                            <div class="col-12">
-                                <div class="precio-card precio-card-horizontal">
-                                    <div class="precio-icon">
-                                        <i class="bi bi-clock"></i>
-                                    </div>
-                                    <div class="precio-content">
-                                        <h3 class="precio-titulo">30 minutos</h3>
-                                        <p class="precio-descripcion">Un shot rápido de diversión. 30 minutos para saltar libremente en todas las áreas del parque</p>
-                                    </div>
-                                    <div class="precio-monto">$99</div>
-                                </div>
-                            </div>
-
-                            <!-- Precio 2 -->
-                            <div class="col-12">
-                                <div class="precio-card precio-card-horizontal">
-                                    <div class="precio-icon">
-                                        <i class="bi bi-clock-history"></i>
-                                    </div>
-                                    <div class="precio-content">
-                                        <h3 class="precio-titulo">60 minutos</h3>
-                                        <p class="precio-descripcion">El tiempo perfecto para agarrar ritmo. 60 minutos de acceso completo a todas las áreas del parque</p>
-                                    </div>
-                                    <div class="precio-monto">$179</div>
-                                </div>
-                            </div>
-
-                            <!-- Precio 3 -->
-                            <div class="col-12">
-                                <div class="precio-card precio-card-horizontal">
-                                    <div class="precio-icon">
-                                        <i class="bi bi-infinity"></i>
-                                    </div>
-                                    <div class="precio-content">
-                                        <h3 class="precio-titulo">90 minutos</h3>
-                                        <p class="precio-descripcion">Ya entrados en calor. 90 minutos para disfrutar sin parar de todas las áreas del parque</p>
-                                    </div>
-                                    <div class="precio-monto">$199</div>
-                                </div>
-                            </div>
-
-                            <!-- Precio 4 -->
-                            <div class="col-12">
-                                <div class="precio-card precio-card-horizontal precio-card-destacado">
-                                    <div class="precio-badge">Popular</div>
-                                    <div class="precio-icon">
-                                        <i class="bi bi-people-fill"></i>
-                                    </div>
-                                    <div class="precio-content">
-                                        <h3 class="precio-titulo">120 minutos</h3>
-                                        <p class="precio-descripcion">Para los que no se cansan. 120 minutos de acceso completo a todas las áreas del parque</p>
-                                    </div>
-                                    <div class="precio-monto">$219</div>
-                                </div>
-                            </div>
-
-                            <!-- Precio 5 -->
-                            <div class="col-12">
-                                <div class="precio-card precio-card-horizontal">
-                                    <div class="precio-icon">
-                                        <i class="bi bi-infinity"></i>
-                                    </div>
-                                    <div class="precio-content">
-                                        <h3 class="precio-titulo">Daypass</h3>
-                                        <p class="precio-descripcion">Ven sin prisas. Acceso ilimitado durante todo el día a todas las áreas del parque</p>
-                                    </div>
-                                    <div class="precio-monto">$269</div>
-                                </div>
-                            </div>
+                        <div class="row g-3" id="listaAccesos">
+                            <!-- Precios insertados por API -->
                         </div>
                     </div>
                 </div>
@@ -227,8 +127,8 @@
                                 Ubicación
                             </h3>
                             <p class="direccion mb-3">
-                                <strong>Sucursal Solidaridad</strong><br>
-                                Blvd. Solidaridad 121, Raquet Club, Hermosillo, Sonora
+                                <strong id="nombreSucursal">Sucursal Solidaridad</strong><br>
+                                <p id="direccionSucursal"></p> 
                             </p>
                             <!-- Mapa incrustado -->
                             <div class="mapa-container">
