@@ -50,6 +50,9 @@
     function mostrarSucursal(data) {
         document.getElementById("nombreSucursal").textContent = data.name;
         document.getElementById("direccionSucursal").textContent = data.address;
+        document.getElementById("nombreSucursalFooter").textContent = data.name;
+        document.getElementById("direccionSucursalFooter").textContent = data.address;
+        document.getElementById("telefonoSucursalFooter").textContent = data.phone;
     }
 
     function mostrarAccesos(accesos) {
