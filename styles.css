@@ -149,11 +149,11 @@ section::after {
 }
 
 .carousel-inner {
-    height: 600px;
+    height: 80vh;
 }
 
 .carousel-item {
-    height: 600px;
+    height: 100%;
 }
 
 .carousel-image {

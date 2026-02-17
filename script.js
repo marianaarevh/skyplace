@@ -119,8 +119,31 @@
             `;
         });
         }
-});
 
+
+    });
+
+/* ===== FUNCIONALIDAD DEL BOTÓN VOLVER ARRIBA =====
+document.addEventListener('DOMContentLoaded', function() {
+    const backToTopButton = document.getElementById('backToTop');
+    
+    // Mostrar/ocultar botón según el scroll
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+        }
+    });
+    
+    // Funcionalidad del botón
+    backToTopButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}); */
 
 // Configuración del carrusel
 document.addEventListener('DOMContentLoaded', function() {
@@ -263,25 +286,3 @@ document.addEventListener('DOMContentLoaded', function() {
             bsCarousel.to(0); // Volver a la primera imagen
         }
     });
-
-// ===== FUNCIONALIDAD DEL BOTÓN VOLVER ARRIBA =====
-document.addEventListener('DOMContentLoaded', function() {
-    const backToTopButton = document.getElementById('backToTop');
-    
-    // Mostrar/ocultar botón según el scroll
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
-            backToTopButton.classList.add('show');
-        } else {
-            backToTopButton.classList.remove('show');
-        }
-    });
-    
-    // Funcionalidad del botón
-    backToTopButton.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-});
