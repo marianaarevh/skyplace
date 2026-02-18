@@ -1843,13 +1843,13 @@ section::after {
     right: 30px;
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, var(--secondary-color), #2980b9);
+    background: #25D366;
     color: white;
     border: none;
     border-radius: 50%;
     font-size: 1.5rem;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+    box-shadow: 0 4px 15px var(--text-dark);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
@@ -1865,7 +1865,7 @@ section::after {
 }
 
 .back-to-top:hover {
-    background: linear-gradient(135deg, #2980b9, var(--secondary-color));
+    background: #075E54;
     transform: translateY(-5px);
     box-shadow: 0 6px 20px rgba(52, 152, 219, 0.6);
 }
