@@ -58,15 +58,15 @@
     function mostrarAccesos(accesos) {
         const contenedor = document.getElementById("listaAccesos");
         contenedor.innerHTML="";
-        accesos.forEach(acceso => {
+        accesos.forEach((acceso, index) => {
 
         const col = document.createElement("div");
         col.classList.add("col-12");
 
         col.innerHTML = `
         <div class="precio-card precio-card-horizontal">
-            <div class="precio-icon">
-                <i class="bi bi-clock"></i>
+            <div class="precio-img-container">
+                <img src="img/info/accesos/${index+1}.png">
             </div>
             <div class="precio-content">
                 <h3 class="precio-titulo">${acceso.nombre}</h3>
