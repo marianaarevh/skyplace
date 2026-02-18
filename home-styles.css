@@ -77,7 +77,7 @@ body::before {
 }
 
 .logo-container-home img{
-    height: 120px;
+    height: 100px;
     width: auto;
 }
 
@@ -127,6 +127,12 @@ body::before {
     margin-bottom: 0.8rem;
     line-height: 1.2;
     color: white;
+    text-shadow: 
+        3px 3px 6px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(247, 148, 29, 0.4);
+    margin-bottom: 0.3rem;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
 }
 
 .subtitulo-home {
@@ -166,42 +172,136 @@ body::before {
     transform: translateY(-10px);
 }
 
-/* Círculo de la sucursal */
-.sucursal-circle {
-    width: 280px;
-    height: 280px;
+
+
+.sucursal-link-glass {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
+.sucursal-card-glass {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 5;
+}
+
+.sucursal-card-glass:hover {
+    transform: translateY(-15px);
+}
+
+/* Círculo de la sucursal con efecto glass COLORIDO */
+.sucursal-circle-glass {
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
     overflow: hidden;
     position: relative;
-    border: 5px solid transparent;
-    background-image: linear-gradient(white, white), 
-                      linear-gradient(135deg, var(--color-morado), var(--color-magenta), var(--color-naranja));
+    /* Fondo con gradiente colorido */
+    background: linear-gradient(135deg, 
+        rgba(115, 49, 110, 0.3) 0%,
+        rgba(197, 37, 110, 0.3) 50%,
+        rgba(129, 196, 202, 0.3) 100%
+    );
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    /* Borde con gradiente colorido */
+    border: 4px solid transparent;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)),
+        linear-gradient(135deg, 
+            var(--color-morado) 0%, 
+            var(--color-magenta) 25%, 
+            var(--color-rosa) 50%, 
+            var(--color-naranja) 75%, 
+            var(--color-cyan) 100%
+        );
     background-origin: border-box;
     background-clip: padding-box, border-box;
-    box-shadow: 0 15px 50px rgba(115, 49, 110, 0.25);
+    box-shadow: 
+        0 10px 40px rgba(197, 37, 110, 0.4),
+        0 0 20px rgba(247, 148, 29, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
     transition: all 0.4s ease;
     cursor: pointer;
+    padding: 5px;
+    animation: borderGlow 3s ease-in-out infinite;
 }
 
-.sucursal-card:hover .sucursal-circle {
-    box-shadow: 0 20px 70px rgba(197, 37, 110, 0.4);
-    background-image: linear-gradient(white, white), 
-                      linear-gradient(135deg, var(--color-magenta), var(--color-rosa), var(--color-naranja));
+@keyframes borderGlow {
+    0%, 100% {
+        box-shadow: 
+            0 10px 40px rgba(197, 37, 110, 0.4),
+            0 0 20px rgba(247, 148, 29, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        box-shadow: 
+            0 10px 40px rgba(129, 196, 202, 0.5),
+            0 0 30px rgba(234, 80, 78, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    }
 }
 
-.sucursal-image {
+.sucursal-card-glass:hover .sucursal-circle-glass {
+    box-shadow: 
+        0 20px 60px rgba(197, 37, 110, 0.6),
+        0 0 40px rgba(247, 148, 29, 0.5),
+        0 0 0 8px rgba(255, 255, 255, 0.4),
+        inset 0 2px 0 rgba(255, 255, 255, 0.7);
+    transform: scale(1.08) rotate(5deg);
+    animation: none;
+}
+
+/* Círculos específicos con diferentes colores dominantes */
+.sucursal-card-glass:nth-child(1) .sucursal-circle-glass {
+    background: linear-gradient(135deg, 
+        rgba(115, 49, 110, 0.35) 0%,
+        rgba(197, 37, 110, 0.35) 100%
+    );
+}
+
+.sucursal-card-glass:nth-child(2) .sucursal-circle-glass {
+    background: linear-gradient(135deg, 
+        rgba(234, 80, 78, 0.35) 0%,
+        rgba(230, 82, 50, 0.35) 100%
+    );
+}
+
+.sucursal-card-glass:nth-child(3) .sucursal-circle-glass {
+    background: linear-gradient(135deg, 
+        rgba(247, 148, 29, 0.35) 0%,
+        rgba(230, 82, 50, 0.35) 100%
+    );
+}
+
+.sucursal-card-glass:nth-child(4) .sucursal-circle-glass {
+    background: linear-gradient(135deg, 
+        rgba(129, 196, 202, 0.35) 0%,
+        rgba(115, 49, 110, 0.35) 100%
+    );
+}
+
+/* Imagen dentro del círculo */
+.sucursal-image-glass {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
+    border-radius: 50%;
+    transition: transform 0.4s ease, filter 0.3s ease;
 }
 
-.sucursal-card:hover .sucursal-image {
-    transform: scale(1.1);
+.sucursal-card-glass:hover .sucursal-image-glass {
+    transform: scale(1.15);
+    filter: brightness(1.1) saturate(1.2);
 }
 
 /* ===== MASCOTA QUE SE ASOMA ===== */
-.mascota-peek {
+.mascota-peek-glass {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -212,95 +312,256 @@ body::before {
     z-index: 10;
 }
 
-.mascota-emoji {
-    height: 50%;
-    width: auto;
+.mascota-img-glass {
     position: absolute;
-    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.4));
+    width: 120px;
+    height: auto;
+
+    filter: drop-shadow(0 12px 35px rgba(0, 0, 0, 0.6)) 
+            drop-shadow(0 0 20px rgba(247, 148, 29, 0.4));
     transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.mascota-emoji img {
-    height: 90%;
-    }
-
 /* Posiciones iniciales - fuera del círculo en diferentes direcciones */
-.sucursal-card:nth-child(1) .mascota-emoji {
-    bottom: -60px;
+.sucursal-card-glass:nth-child(1) .mascota-img-glass {
+    bottom: -70px;
     left: 50%;
     transform: translate(-50%, 100%) scale(0.8);
     opacity: 0;
 }
 
-.sucursal-card:nth-child(2) .mascota-emoji {
-    left: -60px;
+.sucursal-card-glass:nth-child(2) .mascota-img-glass {
+    left: -70px;
     top: 50%;
     transform: translate(-100%, -50%) scale(0.8);
     opacity: 0;
 }
 
-.sucursal-card:nth-child(3) .mascota-emoji {
-    top: -60px;
+.sucursal-card-glass:nth-child(3) .mascota-img-glass {
+    top: -70px;
     left: 50%;
     transform: translate(-50%, -100%) scale(0.8);
     opacity: 0;
 }
 
-.sucursal-card:nth-child(4) .mascota-emoji {
-    right: -60px;
+.sucursal-card-glass:nth-child(4) .mascota-img-glass {
+    right: -70px;
     top: 50%;
     transform: translate(100%, -50%) scale(0.8);
     opacity: 0;
 }
 
-/* Posiciones al hacer hover - se asoman desde atrás */
-.sucursal-card:nth-child(1):hover .mascota-emoji {
-    bottom: -40px;
+/* Posiciones al hacer hover - se asoman desde atrás con más efecto */
+.sucursal-card-glass:nth-child(1):hover .mascota-img-glass {
+    bottom: -50px;
     left: 50%;
-    transform: translate(-50%, 0) scale(1);
+    transform: translate(-50%, 0) scale(1.1);
     opacity: 1;
+    filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.7)) 
+            drop-shadow(0 0 30px rgba(197, 37, 110, 0.6));
 }
 
-.sucursal-card:nth-child(2):hover .mascota-emoji {
-    left: -40px;
+.sucursal-card-glass:nth-child(2):hover .mascota-img-glass {
+    left: -50px;
     top: 50%;
-    transform: translate(0, -50%) scale(1);
+    transform: translate(0, -50%) scale(1.1);
     opacity: 1;
+    filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.7)) 
+            drop-shadow(0 0 30px rgba(234, 80, 78, 0.6));
 }
 
-.sucursal-card:nth-child(3):hover .mascota-emoji {
-    top: -40px;
+.sucursal-card-glass:nth-child(3):hover .mascota-img-glass {
+    top: -50px;
     left: 50%;
-    transform: translate(-50%, 0) scale(1);
+    transform: translate(-50%, 0) scale(1.1);
     opacity: 1;
+    filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.7)) 
+            drop-shadow(0 0 30px rgba(247, 148, 29, 0.6));
 }
 
-.sucursal-card:nth-child(4):hover .mascota-emoji {
-    right: -40px;
+.sucursal-card-glass:nth-child(4):hover .mascota-img-glass {
+    right: -50px;
     top: 50%;
-    transform: translate(0, -50%) scale(1);
+    transform: translate(0, -50%) scale(1.1);
     opacity: 1;
+    filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.7)) 
+            drop-shadow(0 0 30px rgba(129, 196, 202, 0.6));
 }
 
-/* Nombre de la sucursal */
-.sucursal-nombre {
-    font-size: 1.8rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, var(--color-morado), var(--color-magenta));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+/* Información de la sucursal CON GRADIENTE COLORIDO */
+.sucursal-info-glass {
     margin-top: 1.5rem;
     text-align: center;
+    /* Fondo con gradiente colorido glass */
+    /*background: linear-gradient(135deg, 
+        rgba(197, 37, 110, 0.3) 0%,
+        rgba(247, 148, 29, 0.3) 100%
+    );*/
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 0.5rem 1.8rem;
+    border-radius: 25px;
+    border: 3px solid transparent;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
+        linear-gradient(90deg, 
+            var(--color-magenta) 0%, 
+            var(--color-rosa) 50%, 
+            var(--color-naranja) 100%
+        );
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 
+        0 8px 25px rgba(197, 37, 110, 0.4),
+        0 0 15px rgba(247, 148, 29, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
     transition: all 0.3s ease;
+    min-width: 180px;
 }
 
-.sucursal-card:hover .sucursal-nombre {
-    background: linear-gradient(135deg, var(--color-magenta), var(--color-rosa), var(--color-naranja));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.sucursal-card-glass:hover .sucursal-info-glass {
+    background: linear-gradient(135deg, 
+        rgba(234, 80, 78, 0.4) 0%,
+        rgba(129, 196, 202, 0.4) 100%
+    );
+    box-shadow: 
+        0 12px 35px rgba(247, 148, 29, 0.5),
+        0 0 25px rgba(197, 37, 110, 0.4),
+        inset 0 2px 0 rgba(255, 255, 255, 0.5);
     transform: scale(1.05);
+} 
+
+/* Info con colores específicos por sucursal */
+.sucursal-card-glass:nth-child(1) .sucursal-info-glass {
+    background: linear-gradient(135deg, 
+        rgba(115, 49, 110, 0.35) 0%,
+        rgba(197, 37, 110, 0.35) 100%
+    );
+}
+
+.sucursal-card-glass:nth-child(2) .sucursal-info-glass {
+    background: linear-gradient(135deg, 
+        rgba(234, 80, 78, 0.35) 0%,
+        rgba(230, 82, 50, 0.35) 100%
+    );
+}
+
+.sucursal-card-glass:nth-child(3) .sucursal-info-glass {
+    background: linear-gradient(135deg, 
+        rgba(247, 148, 29, 0.35) 0%,
+        rgba(230, 82, 50, 0.35) 100%
+    );
+}
+
+.sucursal-card-glass:nth-child(4) .sucursal-info-glass {
+    background: linear-gradient(135deg, 
+        rgba(129, 196, 202, 0.35) 0%,
+        rgba(115, 49, 110, 0.35) 100%
+    );
+}
+
+.sucursal-nombre-glass {
+    font-size: 1.7rem;
+    font-weight: 900;
+    color: white;
+    text-shadow: 
+        3px 3px 6px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(247, 148, 29, 0.4);
+    margin-bottom: 0.3rem;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.sucursal-card-glass:hover .sucursal-nombre-glass {
+    text-shadow: 
+        4px 4px 8px rgba(0, 0, 0, 0.6),
+        0 0 30px rgba(247, 148, 29, 0.6),
+        0 0 40px rgba(197, 37, 110, 0.4);
+    transform: scale(1.08);
+}
+
+.sucursal-ciudad-glass {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.4),
+        0 0 10px rgba(129, 196, 202, 0.3);
+    letter-spacing: 0.5px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 991px) {
+    .sucursal-circle-glass {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .mascota-img-glass {
+        width: 110px;
+    }
+    
+    .sucursal-nombre-glass {
+        font-size: 1.5rem;
+    }
+    
+    .sucursal-ciudad-glass {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .sucursal-circle-glass {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .mascota-img-glass {
+        width: 100px;
+    }
+    
+    /* En móvil todas las mascotas se asoman desde abajo */
+    .sucursal-card-glass:nth-child(n) .mascota-img-glass {
+        bottom: -60px;
+        left: 50%;
+        top: auto;
+        right: auto;
+        transform: translate(-50%, 100%) scale(0.8);
+    }
+    
+    .sucursal-card-glass:nth-child(n):hover .mascota-img-glass {
+        bottom: -40px;
+        transform: translate(-50%, 0) scale(1.1);
+    }
+    
+    .sucursal-nombre-glass {
+        font-size: 1.4rem;
+    }
+    
+    .sucursal-info-glass {
+        padding: 1rem 1.4rem;
+        min-width: 150px;
+    }
+}
+
+@media (max-width: 576px) {
+    .sucursal-circle-glass {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .mascota-img-glass {
+        width: 90px;
+    }
+    
+    .sucursal-nombre-glass {
+        font-size: 1.3rem;
+    }
+    
+    .sucursal-ciudad-glass {
+        font-size: 1rem;
+    }
 }
 
 /* ===== FOOTER SIMPLE ===== */
