@@ -32,10 +32,11 @@
     if (!sucursal) {
       throw new Error("Sucursal no encontrada");
     }
-
+    aplicarFondo(sucursal)
     mostrarSucursal(sucursal);
     mostrarAccesos(preciosData);
     mostrarPromociones(promocionesData);
+    
     console.log("Accesos recibidos:", preciosData);
 
   })
@@ -119,8 +120,13 @@
             `;
         });
         }
+    function mostrarEventos(sucursales) {
+    }
 
-
+     function aplicarFondo(sucursal) {
+        document.body.classList.remove("fondo-1", "fondo-2", "fondo-3", "fondo-4");
+        document.body.classList.add(`fondo-${sucursal.id}`);
+     }
     });
 
 /* ===== FUNCIONALIDAD DEL BOTÓN VOLVER ARRIBA =====

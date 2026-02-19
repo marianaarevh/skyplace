@@ -43,6 +43,19 @@ body {
     position: relative;
 }
 
+body.fondo-1{
+    background-image: url(img/fondo/SOLI.png);
+}
+body.fondo-2{
+    background-image: url(img/fondo/MORELOS.png);
+}
+body.fondo-3{
+    background-image: url(img/fondo/GUAYMAS.png);
+}
+body.fondo-4{
+    background-image: url(img/fondo/FORUM.png);
+}
+
 /* Separadores de secciones - más sutiles */
 section {
     position: relative;
