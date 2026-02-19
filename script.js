@@ -54,6 +54,7 @@
         document.getElementById("nombreSucursalFooter").textContent = data.name;
         document.getElementById("direccionSucursalFooter").textContent = data.address;
         document.getElementById("telefonoSucursalFooter").textContent = data.phone;
+        document.getElementById("tab-sucursal").textContent = "Sky Place - "+data.name;
     }
 
     function mostrarAccesos(accesos) {
