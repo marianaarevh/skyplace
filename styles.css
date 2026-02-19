@@ -385,7 +385,7 @@ section::after {
 .precio-img-container img{
     border-radius: 100%;
     object-fit: cover;
-     border: 1px solid var(--text-light);
+     border: 0.5px solid var(--text-light);
 }
 .precio-img-container{
     display: flex;
